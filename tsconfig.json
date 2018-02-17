@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "jsx": "react",
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "outDir": "./dist/",
+        "preserveConstEnums": true,
+        "removeComments": true,
+        "sourceMap": true,
+        "target": "ES6",
+        "plugins": [
+            {
+                "name": "typescript-styled-plugin",
+                "tags": [
+                    "Styled",
+                    "Sty",
+                    "css"
+                ]
+            }
+        ]
+    },
+    "include": [
+        "./src/**/*"
+    ],
+    "types": ["jest"]
+}

@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
+
+html, body {
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+#app {
+    font-size: 1.6rem;
+}
