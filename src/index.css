@@ -6,6 +6,10 @@ html, body {
     color: #000;
 }
 
+body {
+    margin: 0;
+}
+
 div {
     box-sizing: border-box;
 }

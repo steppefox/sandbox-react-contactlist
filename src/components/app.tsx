@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import Contacts from './contacts';
+import Toolbar from './toolbar';
 
 export interface IProps {
     className?: string
@@ -9,19 +10,23 @@ export interface IState {}
 export class App extends React.Component<IProps, IState> {
     render() {
         return <div className={this.props.className}>
-            <Contacts />
+            <SContainer>
+                <Contacts />
+                <Toolbar />
+            </SContainer>
         </div>;
     }
 }
 
-const Container = styled.div`
+const SContainer = styled.div`
     display: flex;
-    justify-content: space-between;
+    width: 100%;
+    min-height: 100%;
 `;
 
 export default styled(App)`
-    width: 128rem;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 1rem;
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 `;

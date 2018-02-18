@@ -2,7 +2,8 @@ const {
     FuseBox,
     CSSPlugin,
     ImageBase64Plugin,
-    WebIndexPlugin
+    WebIndexPlugin,
+    JSONPlugin
 } = require("fuse-box");
 
 const fuse = FuseBox.init({
@@ -21,7 +22,8 @@ const fuse = FuseBox.init({
             template: "src/index.html",
             title: "React + Reflux example",
             path: './'
-        })
+        }),
+        JSONPlugin()
     ]
 });
 
