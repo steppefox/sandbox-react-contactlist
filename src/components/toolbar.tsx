@@ -12,33 +12,46 @@ export interface IProps {
 export interface IState { }
 export class Toolbar extends React.Component<IProps, IState> {
     render() {
-        return <div>
-            <button type="button" onClick={() => sendMessage('unknown_user')}>
-                New message from Unknow user
-            </button>
-            <button type="button" onClick={() => sendMessage('top10')}>
-                New message from top 10 contacts list
-            </button>
-            <button type="button" onClick={() => sendMessage('random')}>
-                New message from contacts list
-            </button>
+        return <div className={this.props.className}>
+            <div>
+                <button type="button" onClick={() => sendMessage('unknown_user')}>
+                    New message from Unknow user
+                </button>
+            </div>
+            <div>
+                <button type="button" onClick={() => sendMessage('top10')}>
+                    New message from top 10 contacts list
+                </button>
+            </div>
+            <div>
+                <button type="button" onClick={() => sendMessage('random')}>
+                    New message from contacts list
+                </button>
+            </div>
         </div>;
     };
 }
 
-const StyledToolbar = styled(Toolbar) `
-    width: 25%;
-    min-width: 20rem;
-    max-width: 31.5rem;
-    padding-top: 1rem;
+export default styled(Toolbar) `
+    flex: 1 1 auto;
+    padding: 2rem 1.5rem;
     background: #fff;
-    border-right: 0.1rem solid #ddd;
+
+    button {
+        margin-bottom: 1.5rem;
+        padding: 2rem;
+
+        cursor: pointer;
+        font-size: 1.6rem;
+
+        border: none;
+        background-color: #ddd;
+        transition: background-color .3s linear;
+
+        &:active {
+            background-color: #eee;
+        }
+    }
 `;
-
-export default connect(null, (dispatch) => {
-    return {
-
-    };
-})(StyledToolbar);
 
 

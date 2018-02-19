@@ -4,7 +4,8 @@ const {
     ImageBase64Plugin,
     WebIndexPlugin,
     JSONPlugin,
-    QuantumPlugin
+    QuantumPlugin,
+    EnvPlugin
 } = require("fuse-box");
 
 const IS_DEV = process.env.NODE_ENV !== 'production';
@@ -19,6 +20,9 @@ const fuse = FuseBox.init({
     log: true,
     debug: IS_DEV,
     plugins: [
+        IS_PRODUCTION && EnvPlugin({
+            NODE_ENV: "production"
+        }),
         CSSPlugin(),
         ImageBase64Plugin({
             useDefault: true

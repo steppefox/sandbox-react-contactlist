@@ -17,3 +17,7 @@ div {
 #app {
     font-size: 1.6rem;
 }
+
+.ReactVirtualized__Grid {
+    outline: none;
+}
