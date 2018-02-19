@@ -35,6 +35,26 @@ When you open the page, contact list must contain at least 1000 users. On the sa
 2. Новое сообщение от одного из последних 10 собеседников
 3. Новое сообщение от случайного пользователя
 
+## Installation and Run
+
+For the dev:
+
+```
+npm install
+npm start
+
+Open http://localhost:4445
+```
+
+For the production:
+
+```
+npm install
+npm run build
+
+Open the file: ./dist/index.html
+```
+
 ## Stack
 
 * FuseBox - alternative builder
