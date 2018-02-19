@@ -21,7 +21,7 @@ export class Contact extends React.Component<IProps, IState> {
     }
 
     render() {
-        const { id, name, date, image, className, unreadMessages } = this.props;
+        const { id, name, lastMessage, date, image, className, unreadMessages } = this.props;
         const messageDate = new Date(date);
 
         return <div className={className}>
@@ -31,7 +31,10 @@ export class Contact extends React.Component<IProps, IState> {
             />
 
             <SImage />
-            <STitle>{name}</STitle>
+            <SContent>
+                <STitle>{name}</STitle>
+                <SText>{lastMessage}</SText>
+            </SContent>
             <SInfo>
                 <div>{messageDate.getHours() + ':' + messageDate.getMinutes()}</div>
                 {Boolean(unreadMessages) && <span>{unreadMessages}</span>}
@@ -97,8 +100,22 @@ const SInfo = styled.div`
     }
 `;
 
-const STitle = styled.div`
+const SContent = styled.div`
     flex: 1 1 auto;
+    overflow: hidden;
+`;
+
+const STitle = styled.div`
+    margin-bottom: 0.5rem;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+`;
+
+const SText = styled.div`
+    font-size: 1.3rem;
+    color: #ddd;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;

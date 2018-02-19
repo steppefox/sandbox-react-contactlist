@@ -17,8 +17,8 @@ interface IFakeSocket {
 
 let socket:IFakeSocket;
 
-let fakeCounter = 0;
-
+let fakeUserCounter = 0;
+let fakeMessageCounter = 0;
 /**
  * Fake socket message handler, ofc. it doesn't need any store state in real life, only actions dispatch
  */
@@ -32,7 +32,8 @@ export default function initMessagesListener({ dispatch, getState }: any) {
 
             const baseContact = {
                 date: Date.now(),
-                unreadMessages: 1
+                unreadMessages: 1,
+                lastMessage: `#${++fakeMessageCounter} - new message text`
             };
 
             const { list, sorted } = getState().messages;
@@ -42,7 +43,7 @@ export default function initMessagesListener({ dispatch, getState }: any) {
                     contact = {
                         ...baseContact,
                         id: Math.random() * 1000 + '-' + Date.now(),
-                        name: `UnknownUser-${++fakeCounter}`
+                        name: `UnknownUser-${++fakeUserCounter}`
                     }
                     break;
                 case 'top10':

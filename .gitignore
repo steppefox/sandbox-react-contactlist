@@ -15,3 +15,5 @@ node_modules/
 # Build cache and build files
 .fusebox
 dist
+
+src/helpers/generateItems.js
