@@ -14,7 +14,6 @@ export interface IState {}
 export class Contacts extends React.Component<IProps, IState> {
     render() {
         const { className, sortedIds } = this.props;
-        console.log('Contactssssss render');
 
         return <div className={className}>
             {sortedIds.map((key) => {

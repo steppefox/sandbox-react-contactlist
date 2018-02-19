@@ -7,26 +7,26 @@ import { IItem } from '../modules/messages';
 interface IPassedProps {
     id: string,
     className?: string
-}
-
-export interface IProps extends IItem , IPassedProps{
-
 };
 
-export interface IState { }
-export class Contact extends React.PureComponent<IProps, IState> {
+export interface IProps extends IItem , IPassedProps{};
+export interface IState { };
+
+export class Contact extends React.Component<IProps, IState> {
     render() {
-        console.log('Contact, rerender');
-        const { id, name, image, className } = this.props;
+        const { id, name, date, image, className, unreadMessages } = this.props;
+        const messageDate = new Date(date);
 
         return <div className={className}>
-            <SImage>
-            {/* <img src={image} width="47" height="47" /> */}
-            </SImage>
+            <SImage />
             <STitle>{name}</STitle>
+            <SInfo>
+                <div>{messageDate.getHours() + ':' + messageDate.getMinutes()}</div>
+                {Boolean(unreadMessages) && <span>{unreadMessages}</span>}
+            </SInfo>
         </div>;
     };
-}
+};
 
 const StyledContact = styled(Contact)`
     display: flex;
@@ -35,7 +35,7 @@ const StyledContact = styled(Contact)`
     cursor: pointer;
 
     &:hover {
-        background-color: #eee;
+        background-color: #f6f6f6;
     }
 `;
 
@@ -56,7 +56,24 @@ const SImage = styled.div`
     }
 `;
 
+const SInfo = styled.div`
+    flex: 0 0 auto;
+    color: #ddd;
+    margin-left: 1.5rem;
+    text-align: right;
+
+    span {
+        display: inline-block;
+        background-color: #ddd;
+        color: #fff;
+        padding: 0.2rem 0.5rem;
+        border-radius: 50%;
+        font-size: 1.2rem;
+    }
+`;
+
 const STitle = styled.div`
+    flex: 1 1 auto;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;

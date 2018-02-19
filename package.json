@@ -28,8 +28,9 @@
     "uglify-js": "^3.3.9"
   },
   "scripts": {
+    "test": "jest",
     "start": "node fuse.js",
-    "test": "jest"
+    "build": "NODE_ENV=production node fuse.js"
   },
   "repository": {
     "type": "git",

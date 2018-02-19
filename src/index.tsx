@@ -17,4 +17,4 @@ ReactDOM.render(
     document.getElementById('app')
 );
 
-initMessagesListener(store.dispatch);
+initMessagesListener(store);
