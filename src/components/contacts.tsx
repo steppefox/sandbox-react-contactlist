@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import { IState as IStoreState } from '../modules/index';
 import { IItem } from '../modules/messages';
 import Contact from './contact';
-import { List } from 'react-virtualized/dist/commonjs/List';
-import { AutoSizer } from 'react-virtualized/dist/commonjs/AutoSizer';
+import { List } from 'react-virtualized/dist/es/List';
+import { AutoSizer } from 'react-virtualized/dist/es/AutoSizer';
 
 interface IProps {
     className?: string,
